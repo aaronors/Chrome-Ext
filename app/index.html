@@ -14,23 +14,25 @@ change all scripts to online sources?
       <!--<header>
         <h1 class="listHead">My Marks</h1>
       </header> -->
-    <section id="my_marks">
-        <ul  id="items" class="list-body" >
-          <li class="list-item" ng-repeat="mark in marks">
-            <div>{{mark.title}}</div>
-          </li>
-        </ul>
-        
-    </section>
-                    <div class="form-group">
-              </div>
-        <form class="form-inline">
-                <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+    	<section id="my_marks">
+      	<ul  id="items" class="list-body" >
+					<li class="list-item" ng-repeat="mark in marks">
+							<div>{{mark.title}}</div>
+					</li>
+      	</ul>
+    	</section>
+      <div class="form-group"></div>
     </div>
+  </body>
+	<form class="form-inline">
+		<div class="column">
+		  <label class="sr-only" for="inlineFormInput">Name</label>
+		  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+		</div>
+		<div class="column-button">
+		  <button type="submit" class="btn btn-primary" >Submit</button>
+		</div>
+	</form>
     
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -42,5 +44,5 @@ change all scripts to online sources?
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.controller.js"></script>
     <script src="scripts/directives/main.directive.js"></script>
-  </body>
+  
 </html>
