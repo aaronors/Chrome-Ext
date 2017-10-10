@@ -3,11 +3,6 @@
 
 change all scripts to online sources?  
 
-
-
-
-
-
 -->
 
 <html>
@@ -15,22 +10,33 @@ change all scripts to online sources?
     <link href="styles/main.css" rel="stylesheet">
   </head>
   <body ng-app="my-extension">
-        <div id="main_wrapper" ng-controller="MainController">
-          <!--<header>
-            <h1 class="listHead">My Marks</h1>
-          </header> -->
-          <section id="my_marks">
-            <ul  id="items" class="list-group" >
-              <li class="list-group-item" ng-repeat="mark in marks">
-                <div>{{mark.title}}</div>
-              </li>
-            </ul>
-          </section>
-        </div>
+    <div id="main_wrapper" ng-controller="MainController">
+      <!--<header>
+        <h1 class="listHead">My Marks</h1>
+      </header> -->
+    <section id="my_marks">
+        <ul  id="items" class="list-body" >
+          <li class="list-item" ng-repeat="mark in marks">
+            <div>{{mark.title}}</div>
+          </li>
+        </ul>
+        
+    </section>
+                    <div class="form-group">
+              </div>
+        <form class="form-inline">
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
     
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/Sortable/Sortable.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="scripts/sortscript.js"></script>
     
     <script src="scripts/app.js"></script>

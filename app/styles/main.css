@@ -1,10 +1,12 @@
 body {
   padding: 20px;
+  min-width: 400px;
+  min-height: 300px;
 }
 
 
 
-.list-group {
+.list-body {
     display: -webkit-box;
     display: -webkit-flex;
 
@@ -17,7 +19,7 @@ body {
     margin-bottom: 0;
 }
 
-.list-group-item {
+.list-item {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
