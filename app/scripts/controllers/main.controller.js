@@ -1,12 +1,16 @@
 angular.module('my-extension').controller('MainController', function($scope) {
     $scope.marks = [
     {
-      title: 'Smashing magazine',
-      url: 'https://www.smashingmagazine.com/'
+      title: 'Twitter',
+      url: 'https://twitter.com/sronoraa'
     },
     {
-      title: 'Markticle',
-      url: 'https://markticle.com'
+      title: 'YouTube',
+      url: 'https://www.youtube.com/'
+    },
+    {
+      title: 'AndroidOnline',
+      url: 'https://androidonline.wordpress.com/'
     }
     ];
 });

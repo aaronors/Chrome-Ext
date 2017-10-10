@@ -26,7 +26,8 @@
         "https://*/*"
       ],
       "js": [
-        "scripts/contentscript.js"
+        "scripts/contentscript.js",
+        "bower_components/Sortable/Sortable.js"
       ],
       "run_at": "document_end",
       "all_frames": false

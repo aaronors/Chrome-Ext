@@ -1,17 +1,28 @@
 <!DOCTYPE HTML>
+<!--  Notes
+
+change all scripts to online sources?  
+
+
+
+
+
+
+-->
+
 <html>
   <head>
     <link href="styles/main.css" rel="stylesheet">
   </head>
   <body ng-app="my-extension">
         <div id="main_wrapper" ng-controller="MainController">
-          <header>
-            <h1>My Marks</h1>
-          </header>
+          <!--<header>
+            <h1 class="listHead">My Marks</h1>
+          </header> -->
           <section id="my_marks">
-            <ul>
-              <li ng-repeat="mark in marks">
-                <a target="_blank" ng-href="{{mark.url}}">{{mark.url}}</a>
+            <ul  id="items" class="list-group" >
+              <li class="list-group-item" ng-repeat="mark in marks">
+                <div>{{mark.title}}</div>
               </li>
             </ul>
           </section>
@@ -19,7 +30,8 @@
     
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-
+    <script src="bower_components/Sortable/Sortable.js"></script>
+    <script src="scripts/sortscript.js"></script>
     
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.controller.js"></script>

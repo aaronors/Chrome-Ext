@@ -2,7 +2,12 @@
   "name": "my-extension",
   "private": true,
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "1.2.6",
+    "jquery": "2.0.3",
+    "normalize.scss": "3.0.0",
+    "Sortable": "sortablejs#^1.6.0"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
