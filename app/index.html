@@ -1,38 +1,50 @@
 <!DOCTYPE HTML>
 <!--  Notes
 
-change all scripts to online sources?  
+change all tags to relavent  
 
 -->
 
-<html>
+<html ng-app="my-extension">
   <head>
     <link href="styles/main.css" rel="stylesheet">
   </head>
-  <body ng-app="my-extension">
-    <div id="main_wrapper" ng-controller="MainController">
-      <!--<header>
-        <h1 class="listHead">My Marks</h1>
-      </header> -->
-    	<section id="my_marks">
-      	<ul  id="items" class="list-body" >
-					<li class="list-item" ng-repeat="mark in marks">
-							<div>{{mark.title}}</div>
+  <body>
+    <div id="main_wrapper" ng-controller="ListController">
+      <header>
+         <!--<h1 class="listHead">Now Playing</h1> -->
+      </header> 
+			<ul id="now-playing" class="list-body" >
+				<li class="list-item" >
+					<div>shit</div>
+				</li>
+      </ul>
+			<hr>
+			<div class="form-group"></div>
+    	<section>
+      	<ul id="links" class="list-body" >
+					<li class="list-item" ng-repeat="item in items">
+							<div>{{item.title}}</div>
 					</li>
       	</ul>
     	</section>
       <div class="form-group"></div>
     </div>
   </body>
-	<form class="form-inline">
+	
 		<div class="column">
-		  <label class="sr-only" for="inlineFormInput">Name</label>
-		  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+		  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="add link here">
 		</div>
 		<div class="column-button">
-		  <button type="submit" class="btn btn-primary" >Submit</button>
+		  <button type="submit" class="btn btn-primary">
+      	<span class="glyphicon glyphicon-plus"></span>
+			</button> 
 		</div>
-	</form>
+				<div class="column-button">
+		  <button type="submit" class="btn btn-primary">Add current tab</button> 
+		</div>
+		
+	
     
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>

@@ -1,5 +1,6 @@
-angular.module('my-extension').controller('MainController', function($scope) {
-    $scope.marks = [
+angular.module('my-extension')
+	.controller('ListController', function($scope) {
+    $scope.items = [
     {
       title: 'Twitter',
       url: 'https://twitter.com/sronoraa'
@@ -12,5 +13,13 @@ angular.module('my-extension').controller('MainController', function($scope) {
       title: 'AndroidOnline',
       url: 'https://androidonline.wordpress.com/'
     }
+    ];
+	
+	    $scope.nowPlaying = [
+    {
+      title: ' ',
+      url: 'https://twitter.com/sronoraa'
+    },
+
     ];
 });
