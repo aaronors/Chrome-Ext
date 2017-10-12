@@ -10,9 +10,9 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-
       "scripts/background.js"
-    ]
+    ],
+		"persistent": true
   },
   "permissions": [
     "tabs",
