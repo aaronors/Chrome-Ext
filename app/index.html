@@ -10,24 +10,25 @@ change all tags to relavent
     <link href="styles/main.css" rel="stylesheet">
   </head>
   <body>
-    <div id="main_wrapper" ng-controller="ListController">
+    
       <header>
          <!--<h1 class="listHead">Now Playing</h1> -->
       </header> 
+		<div id="main_wrapper" ng-controller="NowPlayingController">
 			<ul id="now-playing" class="list-body" >
 				<li class="list-item" >
 					<div>shit</div>
 				</li>
       </ul>
+		</div>
 			<hr>
 			<div class="form-group"></div>
-    	<section>
+    	<div id="main_wrapper" ng-controller="ListController">
       	<ul id="links" class="list-body" >
 					<li class="list-item" ng-repeat="item in items">
 							<div>{{item.title}}</div>
 					</li>
       	</ul>
-    	</section>
       <div class="form-group"></div>
     </div>
   </body>
@@ -54,7 +55,8 @@ change all tags to relavent
     <script src="scripts/sortscript.js"></script>
     
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.controller.js"></script>
+    <script src="scripts/controllers/list.controller.js"></script>
+		<script src="scripts/controllers/now-playing.controller.js"></script>
     <script src="scripts/directives/main.directive.js"></script>
   
 </html>

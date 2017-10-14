@@ -15,11 +15,4 @@ angular.module('my-extension')
     }
     ];
 	
-	    $scope.nowPlaying = [
-    {
-      title: ' ',
-      url: 'https://twitter.com/sronoraa'
-    },
-
-    ];
 });
