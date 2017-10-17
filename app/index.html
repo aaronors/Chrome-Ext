@@ -16,8 +16,8 @@ change all tags to relavent
       </header> 
 		<div id="main_wrapper" ng-controller="NowPlayingController">
 			<ul id="now-playing" class="list-body" >
-				<li class="list-item" >
-					<div>shit</div>
+				<li class="list-item" ng-repeat="item in items">
+					<div>{{item.title}}</div>
 				</li>
       </ul>
 		</div>

@@ -8,8 +8,9 @@ angular.module('my-extension')
 
     ];
 	
-		$scope.$watch(function(scope){return scope.items},
+		$scope.$watch(function(scope){return scope.items.length},
 			function(newValue,oldValue){
+				console.log(newValue);
 				if(newValue != oldValue){
 					 alert("List has changed!");
 					}
@@ -17,3 +18,5 @@ angular.module('my-extension')
 			}
 		);
 });
+
+// either watch is not calling $digest, or there is no data being moved 
