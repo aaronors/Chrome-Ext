@@ -14,49 +14,62 @@ change all tags to relavent
       <header>
          <!--<h1 class="listHead">Now Playing</h1> -->
       </header> 
-		<div id="main_wrapper" ng-controller="NowPlayingController">
-			<ul id="now-playing" class="list-body" >
-				<li class="list-item" ng-repeat="item in items">
+		<div id="main_wrapper" ng-controller="ListController">
+			<ul id="now-playing" ui-sortable="sortableOptions" ng-model="nowplaying" class="list-body" >
+				<li class="list-item" ng-repeat="item in nowplaying">
 					<div>{{item.title}}</div>
+					<div class="placeholder" ng-show="isEmpty()">Drop here</div>
 				</li>
+				
       </ul>
-		</div>
+		
 			<hr>
 			<div class="form-group"></div>
-    	<div id="main_wrapper" ng-controller="ListController">
-      	<ul id="links" class="list-body" >
+    	
+      	<ul id="links" ui-sortable="sortableOptions" ng-model="items" class="list-body" >
 					<li class="list-item" ng-repeat="item in items">
 							<div>{{item.title}}</div>
 					</li>
       	</ul>
       <div class="form-group"></div>
-    </div>
-  </body>
+    
+  
 	
-		<div class="column">
-		  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="add link here">
-		</div>
-		<div class="column-button">
-		  <button type="submit" class="btn btn-primary">
-      	<span class="glyphicon glyphicon-plus"></span>
-			</button> 
-		</div>
-				<div class="column-button">
-		  <button type="submit" class="btn btn-primary">Add current tab</button> 
+			<div class="column">
+				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="add link here">
+			</div>
+			<div class="column-button">
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button> 
+			</div>
+			<div class="column-button">
+				<button type="submit" class="btn btn-primary">Add current tab</button> 
+			</div>
+			<div class="column-button">
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-trash"></span>
+				</button> 
+			</div>
 		</div>
 		
-	
+	</body>
     
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/Sortable/Sortable.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <script src="scripts/sortscript.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.js"></script> 
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/ui-sortable/sortable.js"></script>
+	 
+		
+    
+
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    
     
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/list.controller.js"></script>
-		<script src="scripts/controllers/now-playing.controller.js"></script>
+
     <script src="scripts/directives/main.directive.js"></script>
   
 </html>

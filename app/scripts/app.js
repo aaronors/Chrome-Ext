@@ -1,1 +1,4 @@
-angular.module('my-extension', []);
+
+var app = angular.module('my-extension', ['ui.sortable']);
+
+

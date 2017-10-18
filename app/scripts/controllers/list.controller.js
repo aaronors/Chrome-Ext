@@ -15,4 +15,35 @@ angular.module('my-extension')
     }
     ];
 	
+	  $scope.nowplaying = [
+    {
+      title: 'SoundCloud',
+      url: 'https://soundcloud.com/stream' 
+    }
+
+    ];
+	
+	$scope.sortableOptions = {
+		connectWith: ".list-body"
+	}
+	
+	$scope.$watch(function(scope) {return scope.items.length},
+							function(newValue,oldValue){
+								if(newValue != oldValue){
+							 		alert('list has changed');
+								
+								}
+							});
+	
+	$scope.isEmpty = function(){
+		
+		if(!$scope.nowplaying){
+			alert('in here');
+			return true;
+		}
+		else{
+			return false; 
+		}
+	}
+	
 });
