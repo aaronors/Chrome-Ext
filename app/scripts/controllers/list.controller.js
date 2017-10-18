@@ -19,29 +19,36 @@ angular.module('my-extension')
     {
       title: 'SoundCloud',
       url: 'https://soundcloud.com/stream' 
-    }
+    
 
-    ];
+		}];
+	
+		$scope.tempholder = [ "Place link here" ];
 	
 	$scope.sortableOptions = {
-		connectWith: ".list-body"
+		connectWith: ".drop-target",
+		placeholder: ".list-body"
+
 	}
 	
-	$scope.$watch(function(scope) {return scope.items.length},
+	$scope.$watch(function(scope) {return scope.nowplaying.length},
 							function(newValue,oldValue){
 								if(newValue != oldValue){
-							 		alert('list has changed');
+							 		alert('list has changed'+ newValue);
 								
 								}
 							});
 	
 	$scope.isEmpty = function(){
-		
-		if(!$scope.nowplaying){
-			alert('in here');
+		if (!$scope.nowplaying) { // when the last item is removed, this is called without a model.
+      return true;
+     } 
+		else if($scope.nowplaying.length === 0){
+			
 			return true;
 		}
 		else{
+			
 			return false; 
 		}
 	}

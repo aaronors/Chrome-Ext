@@ -15,26 +15,34 @@ change all tags to relavent
          <!--<h1 class="listHead">Now Playing</h1> -->
       </header> 
 		<div id="main_wrapper" ng-controller="ListController">
-			<ul id="now-playing" ui-sortable="sortableOptions" ng-model="nowplaying" class="list-body" >
+			
+			<ul id="now-playing" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="nowplaying" >
 				<li class="list-item" ng-repeat="item in nowplaying">
 					<div>{{item.title}}</div>
-					<div class="placeholder" ng-show="isEmpty()">Drop here</div>
+				</li>
+				<li class="list-item" ng-show="isEmpty()">
+					<div>Place link here!</div>
 				</li>
 				
       </ul>
-		
+			<!-- <ul ng-show="isEmpty()" ui-sortable="sortableOptions" class="list-body" >
+				<li class="list-item">
+					<div>Place link here!</div>
+				</li>
+			</ul> -->
 			<hr>
-			<div class="form-group"></div>
+			<!--<div class="form-group"></div> -->
     	
-      	<ul id="links" ui-sortable="sortableOptions" ng-model="items" class="list-body" >
+      	<ul id="links" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="items">
 					<li class="list-item" ng-repeat="item in items">
 							<div>{{item.title}}</div>
 					</li>
       	</ul>
+			
       <div class="form-group"></div>
     
   
-	
+			<div ui-sortable="sortableOptions" class="drop-target">
 			<div class="column">
 				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="add link here">
 			</div>
@@ -51,6 +59,7 @@ change all tags to relavent
 					<span class="glyphicon glyphicon-trash"></span>
 				</button> 
 			</div>
+		</div>
 		</div>
 		
 	</body>
