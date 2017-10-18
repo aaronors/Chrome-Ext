@@ -27,14 +27,14 @@ angular.module('my-extension')
 	
 	$scope.sortableOptions = {
 		connectWith: ".drop-target",
-		placeholder: ".list-body"
+		placeholder: ".list-item"
 
 	}
 	
 	$scope.$watch(function(scope) {return scope.nowplaying.length},
 							function(newValue,oldValue){
 								if(newValue != oldValue){
-							 		alert('list has changed'+ newValue);
+							 		//alert('list has changed'+ newValue);
 								
 								}
 							});
@@ -53,4 +53,42 @@ angular.module('my-extension')
 		}
 	}
 	
+	$scope.addCurrentTab = function(){
+		chrome.tabs.query({currentWindow: true, active: true},function(tabs) { // null defaults to current window
+  	var tabtitle = tabs[0].title;
+		var taburl = tabs[0].url; 
+		$scope.items.unshift({
+			title: tabtitle,
+			url: taburl
+		});
+  // ...
 });
+	}
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

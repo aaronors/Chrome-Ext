@@ -38,6 +38,16 @@ body {
 			
 }
 
+.list-item-temp {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	border: 1px dashed #C3C8CC;
+			
+}
+
 .column
 {
     float: left;
