@@ -16,7 +16,17 @@ change all tags to relavent
       </header> 
 		<div id="main_wrapper" ng-controller="ListController">
 			
-			<ul id="now-playing" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="nowplaying" >
+			<div id="now-playing" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="nowplaying" >
+				<div class="list-item" ng-repeat="item in nowplaying">
+					{{item.title}}
+				</div>
+				<div class="list-item" ng-show="isEmpty()">
+					Place link here!
+				</div>
+				
+      </div>
+			
+				<!--		<ul id="now-playing" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="nowplaying" >
 				<li class="list-item" ng-repeat="item in nowplaying">
 					<div>{{item.title}}</div>
 				</li>
@@ -24,12 +34,9 @@ change all tags to relavent
 					<div>Place link here!</div>
 				</li>
 				
-      </ul>
-			<!-- <ul ng-show="isEmpty()" ui-sortable="sortableOptions" class="list-body" >
-				<li class="list-item">
-					<div>Place link here!</div>
-				</li>
-			</ul> -->
+      </ul> -->
+
+
 			<hr>
 			<!--<div class="form-group"></div> -->
     	
