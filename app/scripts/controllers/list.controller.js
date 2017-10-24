@@ -26,20 +26,21 @@ angular.module('my-extension')
 	$scope.externalLink = '';
 
 	$scope.tempholder = [ "Place link here" ];
-	$scope.dragDirection = '';
-	$scope.hovered = false;
+
+	
 	
 
 	$scope.sortableOptions = {
 		connectWith: ".drop-target",
-		tolerance: 'intersect',
-		start: onDragStart,
+		
+		update: onDragUpdate,
 		stop: onDragStop,
-		over: onDragOver,
-		out: onDragOut
+		over: onDragOver
+
+
 	}
 
-	$scope.$watch(function(scope) {return scope.nowplaying.length},
+	$scope.$watch(function(scope) {return $scope.nowplaying.length},
 								function(newValue,oldValue){
 		if(newValue > 1){
 			//alert('list has changed'+ newValue);
@@ -68,42 +69,36 @@ angular.module('my-extension')
 
 
 
-	function onDragStart(){
 
+	
+		function onDragUpdate(event,ui) {
 		$scope.$apply(function() {
-			$scope.dragDirection = 'drag-out';
+			if (ui.item.sortable.droptarget[0].classList[0] !== "drop-target")
+        ui.item.sortable.cancel();
+    	
 		});
 	}
-
-	function onDragStop() {
+	
+		function onDragStop(event,ui) {
 		$scope.$apply(function() {
-			$scope.dragDirection = '';
+  if (ui.item.sortable.droptarget[0].classList[0] == "drop-target") {
+      
+				$scope.nowplaying.pop(); 
+        $scope.drag = false
+      }
 		});
 	}
-
-	function onDragOver() {
-		$scope.$apply(function() {
-			$scope.hovered = true;
-		});
+	
+	function onDragOver(event,ui){
+    if ($(this).children().length > 1) {
+        $(ui.placeholder).css('display', 'none');
+    } 
 	}
+											 
 
-	function onDragOut() {
-		$scope.$apply(function() {
-			$scope.hovered = false;
-		});
-	}
 
-	$scope.isEmpty = function() {
-		if (!$scope.nowplaying) { // when the last item is removed, this is called without a model.
-			return true;
-		} else if ($scope.dragDirection === 'drag-out' && !$scope.hovered) { // when dragging last item out of a list
-			return $scope.nowplaying.length <= 1;
-		} else if ($scope.hovered) {
-			return true;
-		} else {
-			return $scope.nowplaying.length === 0;
-		}
-	};
+
+
 });
 
 

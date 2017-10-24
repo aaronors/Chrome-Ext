@@ -57,7 +57,7 @@ body {
 
 .column-button
 {
-    float: left;
+    float: right;
     width: auto;
 		padding-left: 10px;
 }
