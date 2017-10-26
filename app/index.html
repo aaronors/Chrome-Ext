@@ -18,12 +18,13 @@ set border on now playing?
 		</header> 
 		<div id="main_wrapper" ng-controller="ListController">
 
-			<div id="now-playing" class=" drop-target list-body" ui-sortable="drop-target" ng-model="nowplaying" >
-				
+			<div id="now-playing" class=" drop-target" ui-sortable="drop-target" ng-model="nowplaying" >
+
 				{{nowplaying}}
 				<span  class="glyphicon glyphicon-menu-hamburger"></span>
 				<!-- add play button, slider, etc here  -->
 			</div>
+			
 
 			<!--		<ul id="now-playing" class="drop-target list-body" ui-sortable="sortableOptions" ng-model="nowplaying" >
 <li class="list-item" ng-repeat="item in nowplaying">
@@ -39,7 +40,7 @@ set border on now playing?
 			<hr>
 			<!--<div class="form-group"></div> -->
 
-			<ul id="links" class="list-body" ui-sortable="sortableOptions" ng-model="items">
+			<ul id="scrollbar" class="list-body" size="5" ui-sortable="sortableOptions" ng-model="items">
 				<li class="list-item" ng-repeat="item in items">
 					<div>{{item.title}}</div>
 					<span  class="glyphicon glyphicon-menu-hamburger"></span>

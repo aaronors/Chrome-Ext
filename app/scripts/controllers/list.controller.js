@@ -12,7 +12,16 @@ angular.module('my-extension')
 		{
 			title: 'AndroidOnline',
 			url: 'https://androidonline.wordpress.com/'
+		},		{
+			title: 'YouTube',
+			url: 'https://www.youtube.com/'
+		},
+		{
+			title: 'AndroidOnline',
+			url: 'https://androidonline.wordpress.com/'
 		}
+		
+		
 	];
 
 	$scope.nowplaying = [
@@ -32,10 +41,19 @@ angular.module('my-extension')
 
 	$scope.sortableOptions = {
 		connectWith: ".drop-target",
-		
-		update: onDragUpdate,
+        placeholder: {
+            element: function (currentItem) {
+                return $("<div class='component-placeholder'>Place here</div>")[0];
+            },
+            update: function (container, p) {
+                return;
+            }
+        },
 		stop: onDragStop,
-		over: onDragOver
+		over: onDragOver,
+		out: onDragOut
+	
+		
 
 
 	}
@@ -73,27 +91,41 @@ angular.module('my-extension')
 	
 		function onDragUpdate(event,ui) {
 		$scope.$apply(function() {
-			if (ui.item.sortable.droptarget[0].classList[0] !== "drop-target")
+			if (ui.item.sortable.droptarget[0].classList[0] !== "drop-target"){
         ui.item.sortable.cancel();
-    	
+			$(this).parent().addClass("hide-placeholder")	;
+			}
+			else{
+				$(this).parent().removeClass("hide-placeholder") ;
+			}
 		});
 	}
 	
 		function onDragStop(event,ui) {
 		$scope.$apply(function() {
   if (ui.item.sortable.droptarget[0].classList[0] == "drop-target") {
-      
+      console.log("over drop");
 				$scope.nowplaying.pop(); 
-        $scope.drag = false
+        $scope.drag = false;
       }
 		});
 	}
 	
 	function onDragOver(event,ui){
-    if ($(this).children().length > 1) {
-        $(ui.placeholder).css('display', 'none');
-    } 
+		$scope.$apply(function() {
+			if("" != ui.item.sortable.droptarget){
+				console.log("yuup");
+			}
+		});
+		
 	}
+	
+		function onDragOut(event,ui){
+
+			console.log("im out");
+		
+	}
+
 											 
 
 
