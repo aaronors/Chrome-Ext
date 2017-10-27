@@ -1,21 +1,13 @@
 body {
   padding: 20px;
   min-width: 600px;
-  min-height: 300px;
+  min-height: 350px;
 }
 
 
 
 .list-body {
-    display: -webkit-box;
-    display: -webkit-flex;
-	
 
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
 
@@ -25,12 +17,6 @@ body {
 
 .list-item {
     position: relative;
-    display: -webkit-box;
-
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
     padding: .75rem 1.25rem;
     margin-bottom: -1px;
     background-color: #fff;
@@ -58,10 +44,31 @@ body {
 		padding-left: 10px;
 }
 
+.column-button
+{
+    float: right;
+    width: auto;
+		padding-left: 10px;
+}
+
+
+
+.hamburger-button
+{
+	float:right;
+}
+
+#music-bar
+{
+	display:block;
+  text-align:center;
+	padding:20px;
+}
+
 #scrollbar{
 	width:560px;
 	height:180px;
-	overflow-y: scroll; 
+	overflow-y: auto; 
 	overflow-x: hidden; 
 }
 

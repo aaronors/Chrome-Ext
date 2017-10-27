@@ -43,7 +43,7 @@ angular.module('my-extension')
 		connectWith: ".drop-target",
         placeholder: {
             element: function (currentItem) {
-                return $("<div class='component-placeholder'>Place here</div>")[0];
+                return $("<div class='component-placeholder'><br></div>")[0];
             },
             update: function (container, p) {
                 return;
